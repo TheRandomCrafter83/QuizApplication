@@ -22,7 +22,7 @@ fun HomeScreen(navController: NavController) {
 	) {
 		Button(
 			onClick = {
-				navController.navigate(route = MyAppScreens.QuizScreen.name + "/MATH")
+				navController.navigate(route = MyAppScreens.QuizScreen.name + "?category=MATH")
 			}
 		) {
 			Text("START MATH QUIZ")
@@ -31,7 +31,7 @@ fun HomeScreen(navController: NavController) {
 
 		Button(
 			onClick = {
-				navController.navigate(route = MyAppScreens.QuizScreen.name + "/GEOGRAPHY")
+				navController.navigate(route = MyAppScreens.QuizScreen.name + "?category=GEOGRAPHY")
 			}
 		) {
 			Text("START GEOGRAPHY QUIZ")

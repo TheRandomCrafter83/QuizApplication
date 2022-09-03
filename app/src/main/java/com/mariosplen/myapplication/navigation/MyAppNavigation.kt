@@ -21,13 +21,19 @@ fun MyAppNavigation() {
 		}
 
 		composable(
-			route = MyAppScreens.QuizScreen.name + "/{category}",
-			arguments = listOf(navArgument(name = "category") { type = NavType.StringType })
+			route = MyAppScreens.QuizScreen.name + "?category={category}",
+			arguments = listOf(
+				navArgument(name = "category") {
+					type = NavType.StringType
+					defaultValue = "MATH"
+				}
+			)
 		) { backStackEntry ->
-
+			val category  = backStackEntry.arguments?.getString("category")?:"MATH"
 
 			QuizScreen(
-				category = backStackEntry.arguments?.getString("category")
+				navController = navController,
+				category = category
 			)
 		}
 	}
